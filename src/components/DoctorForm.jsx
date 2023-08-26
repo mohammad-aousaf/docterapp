@@ -1,23 +1,20 @@
 import { Button, Col, Form, Input, Row, TimePicker } from "antd";
 import moment from "moment";
 import React from "react";
-
 function DoctorForm({ onFinish, initivalValues }) {
   return (
     <Form
       layout="vertical"
       onFinish={onFinish}
-      initialValues={{
-        ...initivalValues,
+      initialValues={{  ...initivalValues,
         ...(initivalValues && {
           timings: [
             moment(initivalValues?.timings[0], "HH:mm"),
-            moment(initivalValues?.timings[1], "HH:mm"),
-          ],
-        }),
-      }}
-    >
-      <h1 className="card-title mt-3">Personal Information</h1>
+            moment(initivalValues?.timings[1], "HH:mm"), ],
+          }),
+        }}
+      >
+         <h1 className="card-title mt-3">Personal Information</h1>
       <Row gutter={20}>
         <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
@@ -25,11 +22,9 @@ function DoctorForm({ onFinish, initivalValues }) {
             label="First Name"
             name="firstName"
             rules={[{ required: true }]}
-          >
-            <Input placeholder="First Name" />
+          ><Input placeholder="First Name" />
           </Form.Item>
-        </Col>
-        <Col span={8} xs={24} sm={24} lg={8}>
+        </Col> <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
             required
             label="Last Name"
@@ -37,8 +32,7 @@ function DoctorForm({ onFinish, initivalValues }) {
             rules={[{ required: true }]}
           >
             <Input placeholder="Last Name" />
-          </Form.Item>
-        </Col>
+          </Form.Item>  </Col>
         <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
             required
@@ -46,10 +40,9 @@ function DoctorForm({ onFinish, initivalValues }) {
             name="phoneNumber"
             rules={[{ required: true }]}
           >
-            <Input placeholder="Phone Number" />
+           <Input placeholder="Phone Number" />
           </Form.Item>
-        </Col>
-        <Col span={8} xs={24} sm={24} lg={8}>
+        </Col> <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
             required
             label="Website"
@@ -68,9 +61,9 @@ function DoctorForm({ onFinish, initivalValues }) {
           >
             <Input placeholder="Address" />
           </Form.Item>
-        </Col>
-      </Row>
-      <hr />
+        </Col> 
+        </Row>
+        <hr />
       <h1 className="card-title mt-3">Professional Information</h1>
       <Row gutter={20}>
         <Col span={8} xs={24} sm={24} lg={8}>
@@ -82,8 +75,7 @@ function DoctorForm({ onFinish, initivalValues }) {
           >
             <Input placeholder="Specialization" />
           </Form.Item>
-        </Col>
-        <Col span={8} xs={24} sm={24} lg={8}>
+        </Col>   <Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
             required
             label="Experience"
@@ -92,8 +84,7 @@ function DoctorForm({ onFinish, initivalValues }) {
           >
             <Input placeholder="Experience" type="number" />
           </Form.Item>
-        </Col>
-        <Col span={8} xs={24} sm={24} lg={8}>
+        </Col><Col span={8} xs={24} sm={24} lg={8}>
           <Form.Item
             required
             label="Fee Per Cunsultation"
@@ -113,9 +104,7 @@ function DoctorForm({ onFinish, initivalValues }) {
             <TimePicker.RangePicker format="HH:mm" />
           </Form.Item>
         </Col>
-      </Row>
-
-      <div className="d-flex justify-content-end">
+      </Row> <div className="d-flex justify-content-end">
         <Button className="primary-button" htmlType="submit">
           SUBMIT
         </Button>
@@ -123,5 +112,4 @@ function DoctorForm({ onFinish, initivalValues }) {
     </Form>
   );
 }
-
 export default DoctorForm;
